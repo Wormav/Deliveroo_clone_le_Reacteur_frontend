@@ -1,0 +1,26 @@
+.hearder-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 0 8px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #01cdbd;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #cdd1d1;
+  margin-top: -5px;
+  opacity: 0.5;
+}

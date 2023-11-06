@@ -1,0 +1,43 @@
+.restaurant-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  margin: 16px 0;
+  gap: 16px;
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.infos {
+  margin-left: 32px;
+  width: 80%;
+
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+h2 {
+  font-size: 26px;
+}
+
+.restaurant-description {
+  font-size: 20px;
+  color: rgb(170, 168, 168);
+}
+
+.restaurant-picture {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 32px;
+}
