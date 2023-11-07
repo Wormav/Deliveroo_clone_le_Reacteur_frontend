@@ -9,6 +9,9 @@ import Basket from "./components/Basket/Basket";
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [basketData, setBasketData] = useState([]);
+
+  console.log(basketData);
 
   const fetchData = async () => {
     try {
@@ -26,8 +29,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(data);
-
   return (
     <>
       {isLoading && <p>En cours de chargement...</p>}
@@ -41,12 +42,19 @@ function App() {
             <div className="menu">
               {data.categories.map((categorie) => {
                 if (categorie.meals.length > 0) {
-                  return <Categorie categorie={categorie} key={categorie.id} />;
+                  return (
+                    <Categorie
+                      basketData={basketData}
+                      setBasketData={setBasketData}
+                      categorie={categorie}
+                      key={categorie.id}
+                    />
+                  );
                 }
                 return null;
               })}
             </div>
-            <Basket />
+            <Basket setBasketData={setBasketData} basketData={basketData} />
           </div>
         </div>
       )}

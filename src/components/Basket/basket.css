@@ -7,19 +7,20 @@
   background-color: white;
   margin-right: 32px;
   margin-top: 32px;
-  height: 200px;
+  height: fit-content;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   position: -webkit-sticky;
   position: sticky;
   top: 16px;
+  font-size: 12px;
 
   @media (max-width: 800px) {
     display: none;
   }
 }
 
-button {
+.btn {
   border: none;
   background-color: #bac3c3;
   color: #8d9595;
@@ -38,6 +39,82 @@ button {
   }
 }
 
+.btn-basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ccbc;
+  color: white;
+  margin-bottom: 0;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.item-container {
+  width: 90%;
+  border-bottom: 1px solid rgb(196, 193, 193);
+}
+
+.line-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.quantity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #00ccbc;
+  border: 1px solid #00ccbc;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  padding: 0;
+  border-radius: 50px;
+  margin: 0 4px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 8px;
+  border-bottom: 1px solid rgb(196, 193, 193);
+}
+
+.subtotal,
+.delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+  color: #8d9595;
+}
+
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
 .basket-container-mobile {
   display: none;
 
@@ -51,4 +128,47 @@ button {
     bottom: 0;
     top: auto;
   }
+}
+
+.btn-basket-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: purple;
+  color: white;
+}
+
+.total-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(85, 1, 85);
+  width: 20px;
+  height: 20px;
+}
+
+.display-none {
+  display: none;
+}
+
+.icon {
+  font-size: 13px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  margin-left: 95%;
+  margin-bottom: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.basket-container-mobile-open {
+  display: flex;
+  position: fixed;
+  bottom: 113px;
+  width: 100%;
+  top: auto;
+  padding-top: 20px;
 }
