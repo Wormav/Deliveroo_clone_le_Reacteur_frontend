@@ -33,6 +33,10 @@ body {
   max-width: 1200px;
   margin-top: 32px;
   gap: 16px;
+
+  @media (max-width: 800px) {
+    margin-bottom: 64px;
+  }
 }
 
 .menu {

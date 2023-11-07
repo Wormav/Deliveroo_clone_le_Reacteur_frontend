@@ -24,6 +24,10 @@ export default function Basket({ basketData, setBasketData }) {
     const roundedTotal = (newSubtotal + delivery).toFixed(2);
 
     setTotal(roundedTotal);
+
+    if (basketData.length === 0) {
+      setOpen(false);
+    }
   }, [basketData, total, delivery]);
 
   useEffect(() => {
@@ -33,10 +37,8 @@ export default function Basket({ basketData, setBasketData }) {
       }
     };
 
-    // Attacher le gestionnaire d'événements de redimensionnement lors de la mise en place du composant
     window.addEventListener("resize", handleResize);
 
-    // Détacher le gestionnaire d'événements lorsque le composant est démonté
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -68,6 +70,12 @@ export default function Basket({ basketData, setBasketData }) {
     }
   };
 
+  const handleClickCommande = () => {
+    alert(
+      `La facture d'un montant de ${total} € à bien était envoyé au Reacteur ! Merci Xavier et Farid 😊!`
+    );
+  };
+
   return (
     <>
       <div
@@ -77,7 +85,10 @@ export default function Basket({ basketData, setBasketData }) {
             : "basket-container-desktop"
         }
       >
-        <button className={basketData.length > 0 ? "btn-basket btn" : "btn"}>
+        <button
+          onClick={basketData.length > 0 && handleClickCommande}
+          className={basketData.length > 0 ? "btn-basket btn" : "btn"}
+        >
           Valider mon panier
         </button>
         <button
@@ -143,7 +154,10 @@ export default function Basket({ basketData, setBasketData }) {
             {totalQuantity}
           </p>
           {open ? "Valider mon panier" : "Voir mon panier"}
-          <p className={basketData.length > 0 ? "" : "display-none"}>
+          <p
+            onClick={open && handleClickCommande}
+            className={basketData.length > 0 ? "" : "display-none"}
+          >
             {total} €
           </p>
         </button>
